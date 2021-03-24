@@ -11,9 +11,12 @@ public class UserMapper {
 	public UserDTO fromEntityToDTO(User user) {
 		final UserDTO response = new UserDTO();
 		
-		response.setId(user.getId());
-		response.setEmail(user.getEmail());
-		response.setUsername(user.getName());
+		if(user != null){
+			response.setId(user.getId());
+			response.setEmail(user.getEmail());
+			response.setUsername(user.getName());
+		}
+
 		
 		return response;
 		
@@ -25,7 +28,7 @@ public class UserMapper {
 	
 	public User fromDTOToEntity(UserDTO user) {
 		final User response = new User();
-		
+	
 		response.setName(user.getUsername());
 		response.setEmail(user.getEmail());
 		response.setPassword(user.getPwd());
@@ -33,5 +36,17 @@ public class UserMapper {
 		return response;
 	}
 	
+	public User updateUserWithDTO(UserDTO userDTO, User user){
+		// if (userDTO.getUsername() != null){
+		// 	response.setName(user.getUsername());
+		// }
+		// if (user.getUsername() != null){
+		// 	response.setName(user.getUsername());
+		// }
+		// if (user.getUsername() != null){
+		// 	response.setName(user.getUsername());
+		// }
+		return null;
+	}
 	
 }

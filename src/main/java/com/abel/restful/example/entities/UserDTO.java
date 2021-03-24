@@ -1,6 +1,6 @@
 package com.abel.restful.example.entities;
 
-public class UserDTO {
+public class UserDTO{
 	
 	
 	private String id;

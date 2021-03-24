@@ -2,6 +2,7 @@ package com.abel.restful.example.services;
 
 import java.util.List;
 
+import com.abel.restful.example.entities.GenericResponseDTO;
 import com.abel.restful.example.entities.UserDTO;
 
 
@@ -12,6 +13,10 @@ public interface UserService { // service e parecido com o bean. Mas no service 
 	}
 	
 	default UserDTO createUser(UserDTO user) {
+		throw new UnsupportedOperationException();
+	}
+
+	default GenericResponseDTO alterUser(String id, UserDTO user) {
 		throw new UnsupportedOperationException();
 	}
 
