@@ -46,6 +46,7 @@ public class UserServiceImpl implements UserService{
 			if(optionalUser.isPresent()){
 				User user = optionalUser.get();
 				user = this.userMapper.updateUserWithDTO(userDTO, user);
+				this.userRepository.save(user);
 				response.setData(this.userMapper.fromEntityToDTO(user));
 			} else {
 				final GenericErrorDTO error = new GenericErrorDTO();

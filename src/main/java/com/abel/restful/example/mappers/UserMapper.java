@@ -10,7 +10,7 @@ public class UserMapper {
 	
 	public UserDTO fromEntityToDTO(User user) {
 		final UserDTO response = new UserDTO();
-		
+
 		if(user != null){
 			response.setId(user.getId());
 			response.setEmail(user.getEmail());
@@ -37,16 +37,16 @@ public class UserMapper {
 	}
 	
 	public User updateUserWithDTO(UserDTO userDTO, User user){
-		// if (userDTO.getUsername() != null){
-		// 	response.setName(user.getUsername());
-		// }
-		// if (user.getUsername() != null){
-		// 	response.setName(user.getUsername());
-		// }
-		// if (user.getUsername() != null){
-		// 	response.setName(user.getUsername());
-		// }
-		return null;
+		if (userDTO.getUsername() != null){
+			user.setName(userDTO.getUsername());
+		}
+		if (userDTO.getEmail() != null){
+			user.setEmail(userDTO.getEmail());
+		}
+		if (userDTO.getPwd() != null){
+			user.setPassword(userDTO.getPwd());
+		}
+		return user;
 	}
 	
 }
